@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('images/demo_bg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Header styling */
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Heading container */
+.heading-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional background for readability */
+}
+
+.main-heading {
+    font-size: 60px; /* Increased font size */
+    font-weight: bold; /* Made text bold */
+    background: linear-gradient(90deg, #9b23e6, #340ddf); /* Gradient colors */
+    -webkit-background-clip: text;
+    color: transparent;
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); Added shadow for a 3D effect */
+    /* border: 2px solid #ac48ef; Added border to enhance the outline */
+    padding: 10px; /* Added padding to make the text more prominent */
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 100px; /* Added margin-top to avoid overlap with the heading */
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 40%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prediction-container {
+    width: 50%;
+    text-align: center;
+}
+
+.predicted-text {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+}
+
+#generateBtn {
+    width: 60%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff4757;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+#generateBtn:hover {
+    background-color: #ff6b81;
+}
+
+.final-output {
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.final-output p {
+    color: white;
+    font-size: 18px;
+}
+

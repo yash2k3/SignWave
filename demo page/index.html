@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/images/favicon-enhanced.png">
+    <!-- Typed.js CDN for text animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo">
+    </header>
+    
+    <!-- Separate Div for Heading -->
+    <div class="heading-container">
+        <h1 class="main-heading">Welcome to SignWave Demo</h1>
+    </div>
+
+    <div class="container">
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="images/demo_vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Demo Video</p>
+        </div>
+        <div class="prediction-container">
+            <div class="predicted-text">
+                <span class="auto-type" id="predictedText"></span>
+            </div>
+            <select id="languageDropdown">
+                <option value="english">English</option>
+                <option value="telugu">Telugu</option>
+                <option value="hindi">Hindi</option>
+                <!-- Add more languages as needed -->
+            </select>
+            <button id="generateBtn" onclick="generateText()">Generate</button>
+        </div>
+    </div>
+    <div class="final-output">
+        <p id="finalOutput">Final output of the model</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

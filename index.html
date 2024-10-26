@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignWave</title>
+  <link rel="icon" href="/images/favicon-enhanced.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="/images/favicon-enhanced.png" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" text="text/CSS"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" text="text/CSS"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+  html {
+    scroll-behavior: smooth;
+
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .back-top-wrap {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    background-color: #80F7D1;
+    padding: 1rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    z-index: 100;
+  }
+
+  .back-top-wrap:hover {
+    background-color: #00a2ff;
+    color: #80F7D1;
+  }
+
+  .back-top-wrap:hover .fas.fa-arrow-up {
+    color: white;
+  }
+
+  .fas.fa-arrow-up {
+    color: #00488F;
+    transition: 0.3s ease-in-out;
+  }
+</style>
+
+<body onload="myFunction()">
+  <script>
+    document.getElementById("runLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the default link action
+        fetch('http://127.0.0.1:5000/run_script')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("result").innerText = data.message + "\n" + data.output;
+        })
+        .catch(error => {
+            document.getElementById("result").innerText = "An error occurred: " + error;
+        });
+    });
+</script>
+  <div class="loading-wrapper">
+    <img src="./logo.png" id="loading" />
+  </div>
+
+  <!-- Back to top button -->
+  <div id="back-top-div" class="back-top-wrap">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <header>
+    <nav class="nav" id="nav">
+      <div>
+        <a class="navbar-brand" href="#!"> <img src="logo.png" alt="Logo" class="logo" /></a>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <ul class="links" id="navmenu">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#services">SERVICES </a></li>
+          <li><a href="html/contact.html">CONTACT US </a></li>
+        </ul>
+      </div>
+      <button class="login-button"><a href="html/login.html">SignUp / Login</a></button>
+      <div class="hamburger" id="ham">
+        <i class="cancel fa-solid fa-xmark"></i>
+
+        <svg class="burger" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z">
+          </path>
+        </svg>
+      </div>
+    </nav>
+    <div class="menu" id="menu">
+      <ul class="menu-link">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES </a></li>
+        <li><a href="html/contact.html">CONTACT US </a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Welcome to SignWave</h1>
+      <div class="container">
+        <h3><span class="auto-type" style="font-size: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></a></span></h3>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        var typed = new Typed(".auto-type", {
+          strings: ["Transforming Gestures and Signs into Words, Empowering Communication for All!"],
+          typeSpeed: 50,
+          backspeed: 50,
+          loop: true,
+        })
+      </script>
+      <!-- <a href="#" class="rainbow-button" id="runLink" alt="Start Now"></a> -->
+      <a href="#" id="runLink" class="rainbow-button" alt="Start Now"></a>
+      <a href="./demo page/index.html" id="runLink" class="rainbow-button" alt="Demo"></a>
+    <p id="result"></p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h1 data-aos="flip-right">About Us</h1>
+    <div class="max-width">
+      <div data-aos="zoom-in" class="photo"><img src="./images/about.jpg" alt="" height="300px" width="400px"></div>
+      <<div class="about-content">
+        <p data-aos="fade-left" class="text-1">
+          We are <span>SignWave</span>, a team dedicated to bridging the communication gap between the hearing and deaf communities. Our goal is to make the world more <span>inclusive</span> by converting sign language into text for seamless communication.</p>
+        <p data-aos="fade-left" class="text-3">
+          With <span>machine learning</span> and software expertise, we've developed a real-time translation app. We believe technology can <span>break barriers</span> and connect people.
+        </p>
+      </div>
+      
+      
+    </div>
+    <h3><span style="color: rgb(91, 134, 150);">Connect to Teachers</span></h3>
+
+    <div class="box">
+
+      <div data-aos="fade-up" ddata-aos-duration="800" class="card">
+        <img src="./images/gopal.png" alt="Teacher" loading="lazy">
+        <h5>Gopal Chand</h5>
+        <div class="pra">
+          <p>Pakistan</p>
+          <a href="https://www.teacheron.com/tutor/8q1B"><button>View Profile</button></a>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="800" class="card">
+        <img src="./images/Valencia.png" alt="" loading="lazy">
+        <h5>Valencia David</h5>
+        <div class="pra">
+          <p>Dubai</p>
+          <a href="https://www.teacheron.com/tutor/4LYF"><button>View Profile</button></a>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="800" class="card">
+        <img src="./images/jatin.png" alt="teacher" loading="lazy">
+        <h5>Jatin</h5>
+        <div class="pra">
+          <p>India</p>
+          <a href="https://www.teacheron.com/tutor/8kQq"><button class="he">View Profile</button></a>
+        </div>
+
+      </div>
+
+
+      <div data-aos="fade-up" data-aos-duration="800" class="card">
+        <img src="./images/rahul.png" alt="sasanka" loading="lazy">
+        <h5>Rahul</h5>
+        <div class="pra">
+          <p>India</p>
+          <a href="https://www.teacheron.com/tutor/704w"><button>View Profile</button></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services">
+    <h1>Learn Sign Language</h1>
+    <div data-aos="zoom-in" data-aos-duration="800" class="container">
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive laugh">
+        <div class="round-image">
+          <img src="./images/Basic-2.jpg" alt="laughing" />
+        </div>
+        <div class="description">
+          <h2>Introduction to Sign Language Basics</h2>
+          <a href="html/p1.html">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive laugh">
+        <div class="round-image">
+          <img src="./images/Conv.jpg" alt="laughing" />
+        </div>
+        <div class="description">
+          <h2>Everyday Conversations and Common Phrases</h2>
+          <a href="html/p2.html">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive laugh">
+        <div class="round-image">
+          <img src="./images/Adv.jpg" alt="laughing" />
+        </div>
+        <div class="description">
+          <h2>Advanced Sign Language Techniques</h2>
+          <a href="html/p3.html">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+    </div>
+  <!-- Faq section -->
+  <section class="faq">
+    <div class="faq_heading">
+      <h1>Frequently Asked Questions</h1>
+    </div>
+    <div class="accordion">
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>Who are we and what do we do?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>We are the creators of SignWave, a cutting-edge application designed to bridge the communication gap between the deaf and hard-of-hearing community and those who do not understand sign language. Our mission is to make communication more inclusive and accessible by converting sign language gestures into text in real-time. Using advanced computer vision and machine learning technologies, we strive to empower individuals and foster better understanding in everyday interactions, whether in personal, educational, or professional settings. Our team is dedicated to continuous innovation, ensuring that SignWave remains a valuable tool for enhancing communication across the globe.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What services do we offer?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p><b>1.  Real-Time Sign Language Translation:</b>
+            Our primary service is the real-time conversion of sign language gestures into text, allowing for seamless communication between signers and non-signers. This service can be used in various settings, such as personal conversations, classrooms, or professional meetings.
+            <br><br>  <b>2.	Multi-Language Sign Support:</b>
+            We offer support for multiple sign languages, enabling users to translate gestures from different sign languages into text. This feature makes our application versatile and adaptable to diverse communities.
+            <br><br>  <b>3.	Offline Translation:</b>
+            SignWave provides offline translation capabilities, allowing users to communicate even in areas with limited or no internet access. Once the necessary models are downloaded, the app can perform translations directly on the device.
+            <br><br>  <b>4.	Accessibility Consulting:</b>
+            We provide consulting services for organizations seeking to improve accessibility for deaf and hard-of-hearing individuals. Our expertise can help businesses and institutions integrate tools like SignWave into their workflows to promote inclusivity.
+            <br><br>  <b>5.	User Feedback and Model Improvement:</b>
+            We offer users the opportunity to contribute to improving our translation models through feedback and gesture submission. By participating in our testing program, users help refine the accuracy and effectiveness of our services.
+            <br><br>  <b>6.	Educational Resources and Tutorials:</b>
+            We provide resources and tutorials to help users get the most out of SignWave. These resources include guides on using the app, understanding sign language basics, and tips for improving translation accuracy.</a>
+          </p>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>How can you Contact Us?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p> You can contact us via <a class="email" href="mailto:mail_id@gmail.com">mail_id@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>How does SignWave work?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>SignWave uses computer vision and machine learning to detect and recognize hand gestures from sign language. It translates these gestures into text that can be displayed on a screen, making communication more accessible.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>Which sign languages are supported by SignWave?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Initially, SignWave supports American Sign Language (ASL), Indian Sign Language (ISL). Future updates will include more sign languages based on user demand.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>Can SignWave translate sign language to speech as well?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>The current version of SignWave focuses on converting sign language to text. However, future updates may include speech output as well, allowing for voice-based communication.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>Does SignWave require an internet connection?
+          </span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>SignWave can work offline once the necessary models are downloaded. However, an internet connection may be required for updates or additional features like cloud-based translation improvements.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>How accurate is the translation from sign language to text?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>SignWave's accuracy depends on various factors, such as lighting conditions, camera quality, and the complexity of the gestures. The app is continuously learning and improving its accuracy through user feedback and model updates.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>How can I contribute to improving SignWave?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Users can contribute by providing feedback on the app’s performance and accuracy. Additionally, users can participate in testing by submitting videos of specific sign language gestures to help improve the machine learning model.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- footer start -->
+  <footer>
+    <div class="footer-container">
+      <!--logo and info column-->
+      <div class="col">
+        <!--logo insert-->
+        <img src="logo.png" alt="logo" class="footlogo" />
+        <div class="footercontent">
+          <h2 class="footerheading">SignWave</h2>
+          <p class="footerpara">Sign 2 Text</p>
+        </div>
+      </div>
+
+      <!--ADDRESS COLUMN-->
+
+      <div class="footer-side-col">
+        <div class="col">
+          <h3>
+            ADDRESS
+            <div class="underline"><span></span></div>
+          </h3>
+          <p>Greater Noida, India</p>
+          <p class="email-id"><a href="mailto:Website@gmail.com">website_id@gmail.com</a></p>
+        </div>
+        <!--HOME COLUMN-->
+        <div class="col">
+          <h3>HOME</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <!-- <li>
+              <a href="https://github.com/">Code Of Conduct</a>
+            </li> -->
+            <li>
+              <a href="https://github.com/">Contribute</a>
+            </li>
+          </ul>
+        </div>
+        <!--OUR SERVICES COLUMN-->
+        <div class="col">
+          <h3>
+            SERVICES
+            <div class="underline"><span></span></div>
+          </h3>
+          <ul>
+            <li>
+              <a href="html/p1.html">Getting Started</a>
+            </li>
+            <li>
+              <a href="html/p2.html">Daily Talk</a>
+            </li>
+            <li>
+              <a href="html/p3.html">Level Up</a>
+            </li>
+          </ul>
+        </div>
+        <!--CONTACTS COLUMN-->
+        <div class="col">
+          <h3>
+            CONTACTS
+            <div class="underline"><span></span></div>
+          </h3>
+          <div class="social-menu">
+            <ul>
+              <a href="https://twitter.com/" target="_blank">
+                <li id="social-twitter"><i class="fab fa-2x fa-twitter"></i></li>
+              </a>
+              <a href="https://github.com/" target="_blank">
+                <li id="social-github"><i class="fab fa-2x fa-github"></i></li>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank">
+                <li id="social-linkedin"><i class="fab fa-2x fa-linkedin-in"></i></li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+    let preloader = document.querySelector(".loading-wrapper");
+    function myFunction() {
+      preloader.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    let navbar = document.querySelector("#nav");
+    let navmenu = document.querySelector("#navmenu");
+
+    window.onscroll = function () {
+      if (window.pageYOffset >= navmenu.offsetTop) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    };
+
+    window.onscroll = () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('nav-active');
+      } else {
+        navbar.classList.remove('nav-active');
+      }
+    };
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./serviceworker.js')
+          .then((reg) => console.log('Success', reg.scope))
+          .catch((err) => console.log('Error', err))
+      })
+    }
+  </script>
+  <script src="js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
